@@ -79,7 +79,7 @@ class App extends React.Component {
 				</div>
 				
 				<div className="row justify-content-center">
-					<h1>{this.state.region}</h1>
+					<h1 className="display-2">{this.state.region}</h1>
 				</div>
 				
 				<PokemonList pokemons={this.state.pokemons} offset={this.state.offset}/>
