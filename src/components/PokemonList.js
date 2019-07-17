@@ -1,12 +1,12 @@
 import React from 'react';
 import PokemonListItem from './PokemonListItem';
 
-const PokemonList = ({pokemons}) => {
+const PokemonList = ({pokemons, offset}) => {
 	
 	const renderedList = pokemons.map((pokemon, index) => {
 		return <PokemonListItem
 				key={index}
-				id={index + 1}
+				id={index + offset + 1}
 				name={pokemon.name}
 				url={pokemon.url}
 		/>;
