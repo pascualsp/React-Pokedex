@@ -1,10 +1,11 @@
 import React from 'react';
 import './style.css';
 import PokemonList from './PokemonList';
+import PokemonDetail from './PokemonDetail';
 import pokeapi from '../apis/pokeapi';
 
 class App extends React.Component {
-	state = {generation: 0, region: "", pokemons: [], offset: 0};
+	state = {generation: 0, region: "", pokemons: [], selectedMon: null, offset: 0};
 	
 	componentDidMount() {
 		this.onGenSelect(1);
@@ -65,6 +66,12 @@ class App extends React.Component {
 		}
 	};
 	
+	onPokemonSelect = async (pokemon) => {
+		const query = '/pokemon/' + pokemon;
+		const response = await pokeapi.get(query);
+		this.setState({selectedMon: response.data});
+	};
+	
 	render() {
 		return (
 			<div className="container">
@@ -78,11 +85,17 @@ class App extends React.Component {
 					<button type="button" onClick={() => this.onGenSelect(7)} className="btn btn-secondary">Gen 7</button>
 				</div>
 				
+				<PokemonDetail pokemon={this.state.selectedMon} />
+				
 				<div className="row justify-content-center">
 					<h1 className="display-2">{this.state.region}</h1>
 				</div>
 				
-				<PokemonList pokemons={this.state.pokemons} offset={this.state.offset}/>
+				<PokemonList
+					onPokemonSelect={this.onPokemonSelect}
+					pokemons={this.state.pokemons}
+					offset={this.state.offset}
+				/>
 				
 			</div>
 		);

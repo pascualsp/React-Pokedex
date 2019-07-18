@@ -1,4 +1,4 @@
-body, a {
+body, a{
 	background-color: #1a1a1a;
 	color: white;
 }
@@ -16,4 +16,34 @@ a:hover {
 .list-entry {
 	text-transform: capitalize;
 	margin-bottom: 15px;
+}
+
+.pokemon-thumbnail {
+	border: 2px solid transparent;
+}
+
+.pokemon-thumbnail:hover {
+	border: 2px solid white;
+}
+
+.detail-sprite {
+	width: 25%;
+}
+
+.modal {
+	color: black;
+}
+
+.modal-content {
+	text-transform: capitalize;
+}
+
+.info {
+	font-weight: normal;
+	margin-bottom: 20px;
+}
+
+a.wiki-link {
+	background-color: white;
+	color: green;
 }
