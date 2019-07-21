@@ -1,5 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+React web app that displays all Pokemon by region/generation. Also provides brief details for each Pokemon on click.
+
 ## Available Scripts
 
 In the project directory, you can run:

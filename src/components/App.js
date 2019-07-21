@@ -9,6 +9,7 @@ class App extends React.Component {
 	
 	componentDidMount() {
 		this.onGenSelect(1);
+		this.onPokemonSelect(132);
 	}
 	
 	onGenSelect = async (gen) => {
